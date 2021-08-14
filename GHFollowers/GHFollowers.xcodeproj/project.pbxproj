@@ -12,6 +12,8 @@
 		8012448026C4BBF300C9A5EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012447F26C4BBF300C9A5EE /* ViewController.swift */; };
 		8012448526C4BBF500C9A5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012448426C4BBF500C9A5EE /* Assets.xcassets */; };
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
+		80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265626C82F18003A6771 /* SearchViewController.swift */; };
+		80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265826C82F40003A6771 /* FavoriteListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		8012448426C4BBF500C9A5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8012448726C4BBF500C9A5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D6265626C82F18003A6771 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		80D6265826C82F40003A6771 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				8012448426C4BBF500C9A5EE /* Assets.xcassets */,
 				8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */,
 				8012448926C4BBF500C9A5EE /* Info.plist */,
+				80D6265626C82F18003A6771 /* SearchViewController.swift */,
+				80D6265826C82F40003A6771 /* FavoriteListViewController.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -135,6 +141,8 @@
 			files = (
 				8012448026C4BBF300C9A5EE /* ViewController.swift in Sources */,
 				8012447C26C4BBF300C9A5EE /* AppDelegate.swift in Sources */,
+				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
+				80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */,
 				8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

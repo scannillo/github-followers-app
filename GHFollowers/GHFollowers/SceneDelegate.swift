@@ -20,10 +20,29 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = ViewController()
+        window?.rootViewController = createTabBarVC()
         window?.makeKeyAndVisible()
     }
-
+    
+    // TODO: Will breaking this up into smaller functions make this easier to test? Is that good practice?
+    // TODO: Learn about testing apps. Would this be covered by a UI or Unit Test?
+    func createTabBarVC() -> UITabBarController {
+        let searchVC = SearchViewController()
+        searchVC.title = "Search"
+        searchVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 0)
+        let searchNC = UINavigationController(rootViewController: searchVC)
+        
+        let favoritesVC = FavoriteListViewController()
+        favoritesVC.title = "Favorites"
+        favoritesVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 1)
+        let favoritesNC = UINavigationController(rootViewController: favoritesVC)
+        
+        UITabBar.appearance().tintColor = .systemGreen
+        let tabBarVC = UITabBarController()
+        tabBarVC.viewControllers = [searchNC, favoritesNC]
+        return tabBarVC
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.
