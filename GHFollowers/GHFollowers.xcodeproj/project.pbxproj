@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				8012447B26C4BBF300C9A5EE /* AppDelegate.swift */,
-				8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */,
-				8012447F26C4BBF300C9A5EE /* ViewController.swift */,
 				8012448426C4BBF500C9A5EE /* Assets.xcassets */,
-				8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */,
-				8012448926C4BBF500C9A5EE /* Info.plist */,
-				80D6265626C82F18003A6771 /* SearchViewController.swift */,
 				80D6265826C82F40003A6771 /* FavoriteListViewController.swift */,
+				8012448926C4BBF500C9A5EE /* Info.plist */,
+				8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */,
+				8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */,
+				80D6265626C82F18003A6771 /* SearchViewController.swift */,
+				8012447F26C4BBF300C9A5EE /* ViewController.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
