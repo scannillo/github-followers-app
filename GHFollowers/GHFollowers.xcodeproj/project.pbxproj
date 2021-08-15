@@ -16,6 +16,7 @@
 		80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265826C82F40003A6771 /* FavoriteListViewController.swift */; };
 		80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265A26C83CCA003A6771 /* LargeButton.swift */; };
 		80D6265D26C9618E003A6771 /* LargeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265C26C9618E003A6771 /* LargeTextField.swift */; };
+		80D6265F26C96DF6003A6771 /* FollowerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265E26C96DF6003A6771 /* FollowerListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		80D6265826C82F40003A6771 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		80D6265A26C83CCA003A6771 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
 		80D6265C26C9618E003A6771 /* LargeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTextField.swift; sourceTree = "<group>"; };
+		80D6265E26C96DF6003A6771 /* FollowerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				8012447F26C4BBF300C9A5EE /* ViewController.swift */,
 				80D6265A26C83CCA003A6771 /* LargeButton.swift */,
 				80D6265C26C9618E003A6771 /* LargeTextField.swift */,
+				80D6265E26C96DF6003A6771 /* FollowerListViewController.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80D6265F26C96DF6003A6771 /* FollowerListViewController.swift in Sources */,
 				8012448026C4BBF300C9A5EE /* ViewController.swift in Sources */,
 				8012447C26C4BBF300C9A5EE /* AppDelegate.swift in Sources */,
 				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
