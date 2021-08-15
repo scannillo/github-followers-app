@@ -27,6 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     // TODO: Will breaking this up into smaller functions make this easier to test? Is that good practice?
     // TODO: Learn about testing apps. Would this be covered by a UI or Unit Test?
     func createTabBarVC() -> UITabBarController {
+        UINavigationBar.appearance().tintColor = .systemGreen
+        UITabBar.appearance().tintColor = .systemGreen
+        
         let searchVC = SearchViewController()
         searchVC.title = "Search"
         searchVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .search, tag: 0)
@@ -37,7 +40,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         favoritesVC.tabBarItem = UITabBarItem.init(tabBarSystemItem: .favorites, tag: 1)
         let favoritesNC = UINavigationController(rootViewController: favoritesVC)
         
-        UITabBar.appearance().tintColor = .systemGreen
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = [searchNC, favoritesNC]
         return tabBarVC
