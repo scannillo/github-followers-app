@@ -10,21 +10,24 @@ import UIKit
 class AlertViewController: UIViewController {
     
     let containerView = UIView()
-    let titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
-    let bodyLabel = BodyLabel(textAlignment: .center)
-    let okayButton = LargeButton(backgroundColor: .systemPink, title: "Okay.")
     
-    var alertTitleText: String?
-    var bodyMessageText: String?
-    var buttonTitleText: String?
+    var titleLabel = TitleLabel()   // TODO: Should these be optional?
+    var bodyLabel = BodyLabel()     // Whats the best method here
+    var okayButton = LargeButton()
     
     let padding: CGFloat = 20
 
     init(alertTitle: String, bodyMessage: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
-        self.alertTitleText = alertTitle
-        self.bodyMessageText = bodyMessage
-        self.buttonTitleText = buttonTitle
+        
+        self.titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
+        self.titleLabel.text = alertTitle
+        
+        self.bodyLabel = BodyLabel(textAlignment: .center)
+        self.bodyLabel.text = bodyMessage
+        
+        self.okayButton = LargeButton(backgroundColor: .systemBackground, title: buttonTitle)
+        self.okayButton.setTitle("OK", for: .normal)
     }
     
     required init?(coder: NSCoder) {
@@ -38,7 +41,7 @@ class AlertViewController: UIViewController {
         configureContainerView()
         configureTitleLabelStyling()
         configureButtonStyling()
-        configureBodyLabel()
+        configureBodyLabelStyling()
     }
     
     func configureContainerView() {
@@ -61,7 +64,6 @@ class AlertViewController: UIViewController {
     
     func configureTitleLabelStyling() {
         containerView.addSubview(titleLabel)
-        titleLabel.text = alertTitleText ?? "Unknown"
 
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: padding),
@@ -73,7 +75,6 @@ class AlertViewController: UIViewController {
     
     func configureButtonStyling() {
         containerView.addSubview(okayButton)
-        okayButton.setTitle(buttonTitleText ?? "Ok", for: .normal)
         okayButton.addTarget(self, action: #selector(dismissAlert), for: .touchUpInside)
 
         NSLayoutConstraint.activate([
@@ -84,10 +85,9 @@ class AlertViewController: UIViewController {
         ])
     }
     
-    func configureBodyLabel() {
+    func configureBodyLabelStyling() {
         containerView.addSubview(bodyLabel)
         containerView.translatesAutoresizingMaskIntoConstraints = false
-        bodyLabel.text = bodyMessageText ?? "Unknown"
         bodyLabel.numberOfLines = 4
 
         NSLayoutConstraint.activate([
