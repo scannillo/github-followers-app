@@ -36,7 +36,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @objc func pushFollowerListViewController() {
         guard let username = usernameTextField.text, !username.isEmpty else {
-            presentCustomAlertOnMainThread(title: "Empty username.", message: "Please enter a username. 🏳️‍🌈", buttonTitle: "Okay.")
+            presentCustomAlertOnMainThread(title: "Empty username.", message: "Please enter a valid GitHub username. 🏳️‍🌈", buttonTitle: "Okay")
             return
         }
         

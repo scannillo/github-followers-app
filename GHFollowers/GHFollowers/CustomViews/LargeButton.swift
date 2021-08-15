@@ -19,6 +19,8 @@ class LargeButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // TODO: Are these initializers really that helpful?
+    // What benefit do they bring to just setting these properties when needed from the call site?
     init(backgroundColor: UIColor, title: String) {
         super.init(frame: .zero)    // This will get it's width, height, x and y coordinate on the screen when we set our constraints.
         self.backgroundColor = backgroundColor

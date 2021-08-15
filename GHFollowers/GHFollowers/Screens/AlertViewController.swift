@@ -11,23 +11,21 @@ class AlertViewController: UIViewController {
     
     let containerView = UIView()
     
-    var titleLabel = TitleLabel()   // TODO: Should these be optional?
-    var bodyLabel = BodyLabel()     // Whats the best method here
-    var okayButton = LargeButton()
+    // TODO: Should these be optional?
+    // Whats the best method/practice here?
+    var titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
+    var bodyLabel = BodyLabel(textAlignment: .center)
+    var okayButton = LargeButton(backgroundColor: .systemBackground, title: "Ok")
     
     let padding: CGFloat = 20
 
     init(alertTitle: String, bodyMessage: String, buttonTitle: String) {
         super.init(nibName: nil, bundle: nil)
         
-        self.titleLabel = TitleLabel(textAlignment: .center, fontSize: 20)
         self.titleLabel.text = alertTitle
-        
-        self.bodyLabel = BodyLabel(textAlignment: .center)
         self.bodyLabel.text = bodyMessage
-        
-        self.okayButton = LargeButton(backgroundColor: .systemBackground, title: buttonTitle)
-        self.okayButton.setTitle("OK", for: .normal)
+        self.okayButton.setTitle("Ok", for: .normal)
+        self.okayButton.backgroundColor = .systemPink
     }
     
     required init?(coder: NSCoder) {
