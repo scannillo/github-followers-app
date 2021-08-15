@@ -35,9 +35,14 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func pushFollowerListViewController() {
+        guard let username = usernameTextField.text, !username.isEmpty else {
+            print("No username 😢")
+            return
+        }
+        
         let followerListVC = FollowerListViewController()
-        followerListVC.username = usernameTextField.text
-        followerListVC.title = usernameTextField.text
+        followerListVC.username = username
+        followerListVC.title = username
         navigationController?.pushViewController(followerListVC, animated: true)
     }
     
