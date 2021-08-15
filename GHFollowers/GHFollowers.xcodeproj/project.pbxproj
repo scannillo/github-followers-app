@@ -14,6 +14,8 @@
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
 		80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265626C82F18003A6771 /* SearchViewController.swift */; };
 		80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265826C82F40003A6771 /* FavoriteListViewController.swift */; };
+		80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265A26C83CCA003A6771 /* LargeButton.swift */; };
+		80D6265D26C9618E003A6771 /* LargeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265C26C9618E003A6771 /* LargeTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80D6265626C82F18003A6771 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		80D6265826C82F40003A6771 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
+		80D6265A26C83CCA003A6771 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
+		80D6265C26C9618E003A6771 /* LargeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */,
 				80D6265626C82F18003A6771 /* SearchViewController.swift */,
 				8012447F26C4BBF300C9A5EE /* ViewController.swift */,
+				80D6265A26C83CCA003A6771 /* LargeButton.swift */,
+				80D6265C26C9618E003A6771 /* LargeTextField.swift */,
 			);
 			path = GHFollowers;
 			sourceTree = "<group>";
@@ -144,6 +150,8 @@
 				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
 				80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */,
 				8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */,
+				80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */,
+				80D6265D26C9618E003A6771 /* LargeTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
