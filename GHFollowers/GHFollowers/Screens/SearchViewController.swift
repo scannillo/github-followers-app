@@ -9,9 +9,16 @@ import UIKit
 
 class SearchViewController: UIViewController, UITextFieldDelegate {
     
+    // MARK: - Static Properties
+    // MARK: - Injection
+    
+    // MARK: - Instance Properties
+    
     let logoImageView = UIImageView()
     let usernameTextField = LargeTextField()
     let getFollowersButton = LargeButton(backgroundColor: .systemGreen, title: "Get Followers")
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,22 +36,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         navigationController?.isNavigationBarHidden = true
     }
     
-    func configureDismissKeyboardTapGestureRecognizer() {
-        let tapGesture = UITapGestureRecognizer.init(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tapGesture)
-    }
-    
-    @objc func pushFollowerListViewController() {
-        guard let username = usernameTextField.text, !username.isEmpty else {
-            presentCustomAlertOnMainThread(title: "Empty username.", message: "Please enter a valid GitHub username. 🏳️‍🌈", buttonTitle: "Okay")
-            return
-        }
-        
-        let followerListVC = FollowerListViewController()
-        followerListVC.username = username
-        followerListVC.title = username
-        navigationController?.pushViewController(followerListVC, animated: true)
-    }
+    // MARK: - Layout UI
     
     func configureImageView() {
         view.addSubview(logoImageView) // NOTE: Have to add to subview before doing constraints
@@ -90,5 +82,24 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         pushFollowerListViewController()
         return true
     }
+    
+    // MARK: - UI Helpers
 
+    @objc func pushFollowerListViewController() {
+        guard let username = usernameTextField.text, !username.isEmpty else {
+            presentCustomAlertOnMainThread(title: "Empty username.", message: "Please enter a valid GitHub username. 🏳️‍🌈", buttonTitle: "Okay")
+            return
+        }
+        
+        let followerListVC = FollowerListViewController()
+        followerListVC.username = username // inject
+        followerListVC.title = username
+        navigationController?.pushViewController(followerListVC, animated: true)
+    }
+    
+    func configureDismissKeyboardTapGestureRecognizer() {
+        let tapGesture = UITapGestureRecognizer.init(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
 }

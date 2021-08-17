@@ -11,6 +11,8 @@
 		8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */; };
 		8012448526C4BBF500C9A5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012448426C4BBF500C9A5EE /* Assets.xcassets */; };
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
+		809C176A26CB325B007D1029 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176926CB325B007D1029 /* Follower.swift */; };
+		809C176D26CB330B007D1029 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176C26CB330B007D1029 /* User.swift */; };
 		80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265626C82F18003A6771 /* SearchViewController.swift */; };
 		80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265826C82F40003A6771 /* FavoriteListViewController.swift */; };
 		80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265A26C83CCA003A6771 /* LargeButton.swift */; };
@@ -29,6 +31,8 @@
 		8012448426C4BBF500C9A5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8012448726C4BBF500C9A5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GHFollowers/Info.plist; sourceTree = "<group>"; };
+		809C176926CB325B007D1029 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		809C176C26CB330B007D1029 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		80D6265626C82F18003A6771 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		80D6265826C82F40003A6771 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		80D6265A26C83CCA003A6771 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -74,9 +78,19 @@
 				80D6266C26C9AF35003A6771 /* Base */,
 				80D6266A26C9AE9D003A6771 /* CustomViews */,
 				80D6266B26C9AEE2003A6771 /* Extensions */,
+				809C176B26CB3262007D1029 /* Model */,
 				80D6266926C9AE74003A6771 /* Screens */,
 			);
 			path = GHFollowers;
+			sourceTree = "<group>";
+		};
+		809C176B26CB3262007D1029 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				809C176926CB325B007D1029 /* Follower.swift */,
+				809C176C26CB330B007D1029 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		80D6266926C9AE74003A6771 /* Screens */ = {
@@ -189,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809C176D26CB330B007D1029 /* User.swift in Sources */,
 				80D6265F26C96DF6003A6771 /* FollowerListViewController.swift in Sources */,
 				80D6266326C990F3003A6771 /* BodyLabel.swift in Sources */,
 				80D6266726C99A41003A6771 /* UIViewController+Alert.swift in Sources */,
@@ -196,6 +211,7 @@
 				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
 				80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */,
 				8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */,
+				809C176A26CB325B007D1029 /* Follower.swift in Sources */,
 				80D6266526C991C8003A6771 /* AlertViewController.swift in Sources */,
 				80D6266126C98E9A003A6771 /* TitleLabel.swift in Sources */,
 				80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */,
