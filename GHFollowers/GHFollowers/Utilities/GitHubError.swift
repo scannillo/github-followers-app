@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ErrorMessage: String {
+enum GitHubError: String, Error {
     case invalidUsername = "This username constructed an invalid URL."
     case connectionError = "Unable to connect to GitHub API."
     case serverError = "Server returned an error status code."
