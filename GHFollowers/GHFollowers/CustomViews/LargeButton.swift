@@ -30,7 +30,7 @@ class LargeButton: UIButton {
     
     private func configureStyling() {
         layer.cornerRadius = 10
-        titleLabel?.textColor = .label
+        setTitleColor(.white, for: .normal)
         titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
         
         translatesAutoresizingMaskIntoConstraints = false

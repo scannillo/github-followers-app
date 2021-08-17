@@ -13,6 +13,8 @@
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
 		809C176A26CB325B007D1029 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176926CB325B007D1029 /* Follower.swift */; };
 		809C176D26CB330B007D1029 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176C26CB330B007D1029 /* User.swift */; };
+		809C177126CB37A4007D1029 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C177026CB37A4007D1029 /* NetworkManager.swift */; };
+		809C177426CB4183007D1029 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C177326CB4183007D1029 /* ErrorMessage.swift */; };
 		80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265626C82F18003A6771 /* SearchViewController.swift */; };
 		80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265826C82F40003A6771 /* FavoriteListViewController.swift */; };
 		80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6265A26C83CCA003A6771 /* LargeButton.swift */; };
@@ -33,6 +35,8 @@
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GHFollowers/Info.plist; sourceTree = "<group>"; };
 		809C176926CB325B007D1029 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		809C176C26CB330B007D1029 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		809C177026CB37A4007D1029 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		809C177326CB4183007D1029 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		80D6265626C82F18003A6771 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		80D6265826C82F40003A6771 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		80D6265A26C83CCA003A6771 /* LargeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeButton.swift; sourceTree = "<group>"; };
@@ -75,9 +79,11 @@
 		8012447A26C4BBF300C9A5EE /* GHFollowers */ = {
 			isa = PBXGroup;
 			children = (
+				809C177226CB4172007D1029 /* Utilities */,
 				80D6266C26C9AF35003A6771 /* Base */,
 				80D6266A26C9AE9D003A6771 /* CustomViews */,
 				80D6266B26C9AEE2003A6771 /* Extensions */,
+				809C176F26CB3790007D1029 /* Managers */,
 				809C176B26CB3262007D1029 /* Model */,
 				80D6266926C9AE74003A6771 /* Screens */,
 			);
@@ -91,6 +97,22 @@
 				809C176C26CB330B007D1029 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		809C176F26CB3790007D1029 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				809C177026CB37A4007D1029 /* NetworkManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		809C177226CB4172007D1029 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				809C177326CB4183007D1029 /* ErrorMessage.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		80D6266926C9AE74003A6771 /* Screens */ = {
@@ -210,9 +232,11 @@
 				8012447C26C4BBF300C9A5EE /* AppDelegate.swift in Sources */,
 				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
 				80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */,
+				809C177426CB4183007D1029 /* ErrorMessage.swift in Sources */,
 				8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */,
 				809C176A26CB325B007D1029 /* Follower.swift in Sources */,
 				80D6266526C991C8003A6771 /* AlertViewController.swift in Sources */,
+				809C177126CB37A4007D1029 /* NetworkManager.swift in Sources */,
 				80D6266126C98E9A003A6771 /* TitleLabel.swift in Sources */,
 				80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */,
 				80D6265D26C9618E003A6771 /* LargeTextField.swift in Sources */,
