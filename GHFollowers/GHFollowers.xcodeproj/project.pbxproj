@@ -24,6 +24,8 @@
 		80D6266326C990F3003A6771 /* BodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6266226C990F3003A6771 /* BodyLabel.swift */; };
 		80D6266526C991C8003A6771 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6266426C991C8003A6771 /* AlertViewController.swift */; };
 		80D6266726C99A41003A6771 /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D6266626C99A41003A6771 /* UIViewController+Alert.swift */; };
+		80DDF41826CC88A70057FB9B /* FollowerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF41726CC88A70057FB9B /* FollowerCollectionViewCell.swift */; };
+		80DDF41A26CC894D0057FB9B /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF41926CC894D0057FB9B /* AvatarImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		80D6266226C990F3003A6771 /* BodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyLabel.swift; sourceTree = "<group>"; };
 		80D6266426C991C8003A6771 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		80D6266626C99A41003A6771 /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		80DDF41726CC88A70057FB9B /* FollowerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerCollectionViewCell.swift; sourceTree = "<group>"; };
+		80DDF41926CC894D0057FB9B /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,10 +133,12 @@
 		80D6266A26C9AE9D003A6771 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				80DDF41626CC88870057FB9B /* Cells */,
 				80D6266226C990F3003A6771 /* BodyLabel.swift */,
 				80D6265A26C83CCA003A6771 /* LargeButton.swift */,
 				80D6265C26C9618E003A6771 /* LargeTextField.swift */,
 				80D6266026C98E9A003A6771 /* TitleLabel.swift */,
+				80DDF41926CC894D0057FB9B /* AvatarImageView.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -154,6 +160,14 @@
 				8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		80DDF41626CC88870057FB9B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				80DDF41726CC88A70057FB9B /* FollowerCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,9 +247,11 @@
 				80D6265726C82F18003A6771 /* SearchViewController.swift in Sources */,
 				80D6265926C82F40003A6771 /* FavoriteListViewController.swift in Sources */,
 				809C177426CB4183007D1029 /* GitHubError.swift in Sources */,
+				80DDF41826CC88A70057FB9B /* FollowerCollectionViewCell.swift in Sources */,
 				8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */,
 				809C176A26CB325B007D1029 /* Follower.swift in Sources */,
 				80D6266526C991C8003A6771 /* AlertViewController.swift in Sources */,
+				80DDF41A26CC894D0057FB9B /* AvatarImageView.swift in Sources */,
 				809C177126CB37A4007D1029 /* NetworkManager.swift in Sources */,
 				80D6266126C98E9A003A6771 /* TitleLabel.swift in Sources */,
 				80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */,
