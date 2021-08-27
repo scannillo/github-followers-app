@@ -78,6 +78,10 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate, UI
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         updateData(followers: followers)
     }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        updateData(followers: followers)
+    }
         
     // MARK: DiffableDataSource
     
