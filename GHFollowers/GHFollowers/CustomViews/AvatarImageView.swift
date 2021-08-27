@@ -25,4 +25,33 @@ class AvatarImageView: UIImageView {
         translatesAutoresizingMaskIntoConstraints = false
     }
     
+    func downloadImage(from urlString: String) {
+        // Check cache first
+        if let image = NetworkManager.shared.cache.object(forKey: urlString as NSString) {
+            self.image = image
+            return
+        }
+        
+        // If not in cache, download image
+        guard let url = URL(string: urlString) else { return }
+        
+        URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self else { return }
+            
+            guard let response = response as? HTTPURLResponse,
+                  response.statusCode == 200,
+                  let data = data,
+                  error == nil else {
+                return
+            }
+            
+            guard let image = UIImage(data: data) else { return }
+            NetworkManager.shared.cache.setObject(image, forKey: urlString as NSString)
+            
+            DispatchQueue.main.async {
+                self.image = image
+            }
+        }.resume()
+    }
+    
 }

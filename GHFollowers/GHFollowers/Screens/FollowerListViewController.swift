@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FollowerListViewController: UIViewController {
+class FollowerListViewController: UIViewController, UICollectionViewDelegate {
     
     enum CollectionViewSection {
         case main
@@ -18,12 +18,15 @@ class FollowerListViewController: UIViewController {
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<CollectionViewSection, Follower>!
     
+    var page = 1
+    var hasMoreFollowers = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()             // Table of contents for your VC
         configureViewControllerUI()
         configureCollectionView()
         configureDataSource()
-        getFollowers()
+        getFollowers(page: page)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +46,7 @@ class FollowerListViewController: UIViewController {
         view.addSubview(collectionView)
         collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
+        collectionView.delegate = self
     }
         
     // MARK: DiffableDataSource
@@ -66,19 +70,39 @@ class FollowerListViewController: UIViewController {
     
     // MARK: - Helpers
     
-    func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+    func getFollowers(page: Int) {
+        NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else { return } // unwrapping optional self
             
             switch result {
             case .success(let followers):
+                if followers.count < 100 {
+                    self.hasMoreFollowers = false
+                }
                 print("Followers count: \(followers.count)")
                 print(followers)
-                self.followers = followers
+                self.followers.append(contentsOf: followers)
                 self.updateData()
             case .failure(let error):
                 self.presentCustomAlertOnMainThread(title: "No followers found.", message: error.rawValue, buttonTitle: "Okay")
             }
+        }
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+        
+        if offsetY > totalContentHeight - screenHeight && hasMoreFollowers {
+            page += 1
+            getFollowers(page: page)
         }
     }
     

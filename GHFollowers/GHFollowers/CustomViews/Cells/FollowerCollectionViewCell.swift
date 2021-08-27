@@ -27,6 +27,7 @@ class FollowerCollectionViewCell: UICollectionViewCell {
     // Why are using this set method? Would a custom initializer make more sense?
     func set(follower: Follower) {
         usernameLabel.text = follower.login
+        avatarImage.downloadImage(from: follower.avatarUrl)
     }
     
     func configureLayout() {
