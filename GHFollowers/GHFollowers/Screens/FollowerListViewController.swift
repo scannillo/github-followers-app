@@ -7,13 +7,14 @@
 
 import UIKit
 
-class FollowerListViewController: UIViewController, UICollectionViewDelegate {
+class FollowerListViewController: UIViewController, UICollectionViewDelegate, UISearchResultsUpdating, UISearchBarDelegate {
     
     enum CollectionViewSection {
         case main
     }
     
     var followers: [Follower] = []
+    var filteredFollowers: [Follower] = []
     var username: String!
     var collectionView: UICollectionView!
     var dataSource: UICollectionViewDiffableDataSource<CollectionViewSection, Follower>!
@@ -26,6 +27,7 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate {
         configureViewControllerUI()
         configureCollectionView()
         configureDataSource()
+        configureSearchController()
         getFollowers(page: page)
     }
     
@@ -48,6 +50,34 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate {
         collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
         collectionView.delegate = self
     }
+    
+    func configureSearchController() {
+        // TODO: Do we need a UISearchController here? Would a search bar work?
+        // Do we need both delegates?
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.searchBar.placeholder = "Search for a username"
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
+    
+    // MARK: - UISearchResultsUpdating
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter = searchController.searchBar.text, filter != "" else {
+            return
+        }
+        
+        filteredFollowers = followers.filter {$0.login.lowercased().contains(filter.lowercased())}
+        updateData(followers: filteredFollowers)
+    }
+    
+    // MARK: UISearchBarDelegate
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        updateData(followers: followers)
+    }
         
     // MARK: DiffableDataSource
     
@@ -59,7 +89,7 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate {
         })
     }
     
-    func updateData() {
+    func updateData(followers: [Follower]) {
         var snapshot = NSDiffableDataSourceSnapshot<CollectionViewSection, Follower>()
         snapshot.appendSections([.main])
         snapshot.appendItems(followers)
@@ -88,7 +118,7 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate {
                 print("Followers count: \(followers.count)")
                 print(followers)
                 self.followers.append(contentsOf: followers)
-                self.updateData()
+                self.updateData(followers: self.followers)
             case .failure(let error):
                 self.presentCustomAlertOnMainThread(title: "No followers found.", message: error.rawValue, buttonTitle: "Okay")
             }
