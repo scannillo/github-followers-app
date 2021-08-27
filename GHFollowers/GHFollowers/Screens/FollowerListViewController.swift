@@ -71,9 +71,15 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate {
     // MARK: - Helpers
     
     func getFollowers(page: Int) {
+        showLoadingView()
+        
         NetworkManager.shared.getFollowers(for: username, page: page) { [weak self] result in
             guard let self = self else { return } // unwrapping optional self
-            
+
+            DispatchQueue.main.async {
+                self.hideLoadingView()
+            }
+                        
             switch result {
             case .success(let followers):
                 if followers.count < 100 {
