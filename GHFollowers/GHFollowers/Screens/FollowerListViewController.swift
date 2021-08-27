@@ -9,13 +9,20 @@ import UIKit
 
 class FollowerListViewController: UIViewController {
     
+    enum CollectionViewSection {
+        case main
+    }
+    
+    var followers: [Follower] = []
     var username: String!
     var collectionView: UICollectionView!
+    var dataSource: UICollectionViewDiffableDataSource<CollectionViewSection, Follower>!
     
     override func viewDidLoad() {
         super.viewDidLoad()             // Table of contents for your VC
         configureViewControllerUI()
         configureCollectionView()
+        configureDataSource()
         getFollowers()
     }
     
@@ -32,21 +39,43 @@ class FollowerListViewController: UIViewController {
     }
     
     func configureCollectionView() {
-        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UICollectionViewFlowLayout())
+        collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: UIHelper.createThreeColumnFlowLayout(in: view))
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .systemGreen
+        collectionView.backgroundColor = .systemBackground
         collectionView.register(FollowerCollectionViewCell.self, forCellWithReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier)
+    }
+        
+    // MARK: DiffableDataSource
+    
+    func configureDataSource() {
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { (collectionView, indexPath, follower) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FollowerCollectionViewCell.reuseIdentifier, for: indexPath) as! FollowerCollectionViewCell
+            cell.set(follower: follower)
+            return cell
+        })
+    }
+    
+    func updateData() {
+        var snapshot = NSDiffableDataSourceSnapshot<CollectionViewSection, Follower>()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(followers)
+        DispatchQueue.main.async {
+            self.dataSource.apply(snapshot, animatingDifferences: true)
+        }
     }
     
     // MARK: - Helpers
     
     func getFollowers() {
-        NetworkManager.shared.getFollowers(for: username, page: 1) { result in
+        NetworkManager.shared.getFollowers(for: username, page: 1) { [weak self] result in
+            guard let self = self else { return } // unwrapping optional self
             
             switch result {
             case .success(let followers):
                 print("Followers count: \(followers.count)")
                 print(followers)
+                self.followers = followers
+                self.updateData()
             case .failure(let error):
                 self.presentCustomAlertOnMainThread(title: "No followers found.", message: error.rawValue, buttonTitle: "Okay")
             }

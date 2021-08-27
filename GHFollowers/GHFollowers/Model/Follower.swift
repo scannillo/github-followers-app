@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Follower: Codable {
+struct Follower: Codable, Hashable {
     var login: String           // If you don't make this optional, and the value isn't there
                                 // app will crash
     var avatarUrl: String
