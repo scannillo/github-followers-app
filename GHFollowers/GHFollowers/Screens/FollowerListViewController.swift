@@ -58,6 +58,7 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate, UI
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search for a username"
+        searchController.obscuresBackgroundDuringPresentation = false
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
     }
@@ -102,6 +103,30 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
+    // MARK: - UICollectionViewDelegate
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let follower = self.dataSource.itemIdentifier(for: indexPath)
+        
+        // TODO: Do we need to add a NavigationController to get that top bar?
+        // Is there a lighterweight way?
+        let destinationViewController = UserInfoViewController()
+        destinationViewController.username = follower?.login
+        let navigationController = UINavigationController(rootViewController: destinationViewController)
+        present(navigationController, animated: true)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let screenHeight = scrollView.frame.size.height
+        
+        if offsetY > totalContentHeight - screenHeight && hasMoreFollowers {
+            page += 1
+            getFollowers(page: page)
+        }
+    }
+    
     // MARK: - Helpers
     
     func getFollowers(page: Int) {
@@ -126,23 +151,6 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate, UI
             case .failure(let error):
                 self.presentCustomAlertOnMainThread(title: "No followers found.", message: error.rawValue, buttonTitle: "Okay")
             }
-        }
-    }
-    
-    // MARK: - UICollectionViewDelegate
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //
-    }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let offsetY = scrollView.contentOffset.y
-        let totalContentHeight = scrollView.contentSize.height
-        let screenHeight = scrollView.frame.size.height
-        
-        if offsetY > totalContentHeight - screenHeight && hasMoreFollowers {
-            page += 1
-            getFollowers(page: page)
         }
     }
     

@@ -11,6 +11,7 @@
 		8012447E26C4BBF300C9A5EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012447D26C4BBF300C9A5EE /* SceneDelegate.swift */; };
 		8012448526C4BBF500C9A5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012448426C4BBF500C9A5EE /* Assets.xcassets */; };
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
+		80215ED126DB1239006E1617 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80215ED026DB1239006E1617 /* UserInfoViewController.swift */; };
 		809C176A26CB325B007D1029 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176926CB325B007D1029 /* Follower.swift */; };
 		809C176D26CB330B007D1029 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176C26CB330B007D1029 /* User.swift */; };
 		809C177126CB37A4007D1029 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C177026CB37A4007D1029 /* NetworkManager.swift */; };
@@ -36,6 +37,7 @@
 		8012448426C4BBF500C9A5EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8012448726C4BBF500C9A5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GHFollowers/Info.plist; sourceTree = "<group>"; };
+		80215ED026DB1239006E1617 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 		809C176926CB325B007D1029 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		809C176C26CB330B007D1029 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		809C177026CB37A4007D1029 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				80D6265826C82F40003A6771 /* FavoriteListViewController.swift */,
 				80D6265E26C96DF6003A6771 /* FollowerListViewController.swift */,
 				80D6265626C82F18003A6771 /* SearchViewController.swift */,
+				80215ED026DB1239006E1617 /* UserInfoViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				80D6266126C98E9A003A6771 /* TitleLabel.swift in Sources */,
 				80D6265B26C83CCA003A6771 /* LargeButton.swift in Sources */,
 				80D6265D26C9618E003A6771 /* LargeTextField.swift in Sources */,
+				80215ED126DB1239006E1617 /* UserInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
