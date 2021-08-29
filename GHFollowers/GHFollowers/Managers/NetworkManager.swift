@@ -49,7 +49,44 @@ class NetworkManager {
             }
             
         }.resume()
+    }
+    
+    // TODO: Refactor these into one method
+    func getUserInfo(for username: String, completion: @escaping (Result<User, GitHubError>) -> Void) {
+        let endpoint = baseURL + "/users/\(username)"
         
+        guard let url = URL(string: endpoint) else {
+            completion(.failure(.invalidUsername))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let _ = error {
+                completion(.failure(.connectionError))
+                return
+            }
+            
+            guard let data = data else {
+                completion(.failure(.invalidData))
+                return
+            }
+            
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                completion(.failure(.serverError))
+                return
+            }
+            
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let userInfo = try decoder.decode(User.self, from: data)
+                completion(.success(userInfo))
+            } catch {
+                completion(.failure(.invalidData))
+            }
+            
+            
+        }.resume()
     }
     
 }
