@@ -12,6 +12,9 @@
 		8012448526C4BBF500C9A5EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012448426C4BBF500C9A5EE /* Assets.xcassets */; };
 		8012448826C4BBF500C9A5EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8012448626C4BBF500C9A5EE /* LaunchScreen.storyboard */; };
 		80215ED126DB1239006E1617 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80215ED026DB1239006E1617 /* UserInfoViewController.swift */; };
+		802E762A26DBF49200A32F14 /* UserInfoHeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802E762926DBF49200A32F14 /* UserInfoHeaderViewController.swift */; };
+		802E762D26DBF50B00A32F14 /* SecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802E762C26DBF50B00A32F14 /* SecondaryTitleLabel.swift */; };
+		802E762F26DBFBE100A32F14 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802E762E26DBFBE100A32F14 /* Constants.swift */; };
 		809C176A26CB325B007D1029 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176926CB325B007D1029 /* Follower.swift */; };
 		809C176D26CB330B007D1029 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C176C26CB330B007D1029 /* User.swift */; };
 		809C177126CB37A4007D1029 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809C177026CB37A4007D1029 /* NetworkManager.swift */; };
@@ -38,6 +41,9 @@
 		8012448726C4BBF500C9A5EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8012448926C4BBF500C9A5EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = GHFollowers/Info.plist; sourceTree = "<group>"; };
 		80215ED026DB1239006E1617 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		802E762926DBF49200A32F14 /* UserInfoHeaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoHeaderViewController.swift; sourceTree = "<group>"; };
+		802E762C26DBF50B00A32F14 /* SecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryTitleLabel.swift; sourceTree = "<group>"; };
+		802E762E26DBFBE100A32F14 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		809C176926CB325B007D1029 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		809C176C26CB330B007D1029 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		809C177026CB37A4007D1029 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -98,6 +104,14 @@
 			path = GHFollowers;
 			sourceTree = "<group>";
 		};
+		802E762B26DBF49900A32F14 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				802E762926DBF49200A32F14 /* UserInfoHeaderViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		809C176B26CB3262007D1029 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +134,7 @@
 			children = (
 				809C177326CB4183007D1029 /* GitHubError.swift */,
 				80D52B2826D7103D000EE824 /* UIHelper.swift */,
+				802E762E26DBFBE100A32F14 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -139,12 +154,14 @@
 		80D6266A26C9AE9D003A6771 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				802E762B26DBF49900A32F14 /* ViewControllers */,
 				80DDF41626CC88870057FB9B /* Cells */,
 				80D6266226C990F3003A6771 /* BodyLabel.swift */,
 				80D6265A26C83CCA003A6771 /* LargeButton.swift */,
 				80D6265C26C9618E003A6771 /* LargeTextField.swift */,
 				80D6266026C98E9A003A6771 /* TitleLabel.swift */,
 				80DDF41926CC894D0057FB9B /* AvatarImageView.swift */,
+				802E762C26DBF50B00A32F14 /* SecondaryTitleLabel.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -245,6 +262,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				802E762D26DBF50B00A32F14 /* SecondaryTitleLabel.swift in Sources */,
+				802E762F26DBFBE100A32F14 /* Constants.swift in Sources */,
+				802E762A26DBF49200A32F14 /* UserInfoHeaderViewController.swift in Sources */,
 				809C176D26CB330B007D1029 /* User.swift in Sources */,
 				80D6265F26C96DF6003A6771 /* FollowerListViewController.swift in Sources */,
 				80D6266326C990F3003A6771 /* BodyLabel.swift in Sources */,
