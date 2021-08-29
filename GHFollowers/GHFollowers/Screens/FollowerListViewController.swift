@@ -110,8 +110,7 @@ class FollowerListViewController: UIViewController, UICollectionViewDelegate, UI
         
         // TODO: Do we need to add a NavigationController to get that top bar?
         // Is there a lighterweight way?
-        let destinationViewController = UserInfoViewController()
-        destinationViewController.username = follower?.login
+        let destinationViewController = UserInfoViewController(with: follower!  )
         let navigationController = UINavigationController(rootViewController: destinationViewController)
         present(navigationController, animated: true)
     }

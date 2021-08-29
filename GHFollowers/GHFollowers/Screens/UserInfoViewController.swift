@@ -9,8 +9,18 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     
-    var username: String!
-
+    private var follower: Follower
+    
+    init(with follower: Follower) {
+        self.follower = follower
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // if this view controller is loaded from a storyboard, follower will be nil
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -18,7 +28,7 @@ class UserInfoViewController: UIViewController {
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissViewController))
         navigationItem.rightBarButtonItem = doneButton
         
-        print(username)
+        print(follower.login)
     }
     
     @objc func dismissViewController() {
